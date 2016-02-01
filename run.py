@@ -196,7 +196,7 @@ class CVCBot(object):
 
 	def load_key(self, key_fname):
 		with open(key_fname, 'r') as f:
-			return f.readlines()[0]
+			return f.readlines()[0].rstrip('\r\n')
 	
 	def run(self):
 		self.bot.polling(none_stop=True)
